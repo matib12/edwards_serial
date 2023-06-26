@@ -11,4 +11,7 @@ A configuration file is necessary to connect to the InfluxDB database.
     URL = http://SERVER_IP:8086  
     Token = YOUR_ACCESS_TOKEN  
     Org = YOUR_ORGANIZATION  
-
+    Bucket = YOUR_BUCKET
+      
+    [Edwards]  
+    Port = /dev/ttyUSB0

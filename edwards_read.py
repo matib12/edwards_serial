@@ -5,8 +5,6 @@ import datetime
 
 import edwardsserial
 
-port = '/dev/ttyUSB0'
-
 # InfluxDB server
 import configparser
 import os
@@ -19,14 +17,15 @@ config.read(os.path.join(dir_path, 'influxdb.ini'))
 token = config['Influx']['Token']
 org = config['Influx']['Org']
 url = config['Influx']['URL']
+bucket = config['Influx']['Bucket']
 
-import influxdb_client, os, time
+port = config['Edwards']['Port']
+
+import influxdb_client, time
 from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS
 
 write_client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
-
-bucket="ICRR_test"
 
 write_api = write_client.write_api(write_options=SYNCHRONOUS)
 
