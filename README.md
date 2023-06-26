@@ -6,6 +6,7 @@ Python script for vacuum pressure monitoring using Edwards gauge via serial comm
 
 # Init file for InfluxDB
 A configuration file is necessary to connect to the InfluxDB database.
+
     [Influx]
     URL = http://SERVER_IP:8086  
     Token = YOUR_ACCESS_TOKEN  
